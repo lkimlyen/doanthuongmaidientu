@@ -1,0 +1,24 @@
+﻿@model IEnumerable<webanhnguyen.Models.tbl_Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="tygh-content clearfix">
+    <div class="container-fluid  content-grid">
+        <div class="row-fluid ">
+            <div class="span16 ">
+                @{Html.RenderAction("ProductbyCategory", "Home"); }
+
+                <div class="ty-mainbox-container clearfix">
+                   
+                        <h1 class="ty-mainbox-title">
+
+                           Sách hay <font color="#07ca75">mỗi ngày</font>
+
+                        </h1>
+                        @{ Html.RenderAction("monanmoingay", "Home");}
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
