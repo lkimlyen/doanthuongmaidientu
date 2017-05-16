@@ -413,7 +413,7 @@ namespace webanhnguyen.Controllers
                 order.tennguoinhan = emailReceiver;
                 order.phonenumber = phoneReceiver;
                 order.diachi = addressReceiver;
-                order.gmail = emailReceiver;
+                order.email = emailReceiver;
                 order.price = totalPrice;
                 order.status = false;
                 context.db.Orders.InsertOnSubmit(order);

@@ -9,7 +9,7 @@ namespace webanhnguyen.Controllers
 {
     public class ShoppingCartController : BaseController
     {
-        databaseDataContext db = new databaseDataContext();
+        //databaseDataContext db = new databaseDataContext();
         // GET: ShoppingCart
         public ActionResult Index()
         {
@@ -165,7 +165,7 @@ namespace webanhnguyen.Controllers
             ddh.tennguoinhan = collection["name"];
             ddh.diachi = collection["address"];
             ddh.phonenumber = collection["phonenumber"];
-            ddh.gmail = collection["email"];
+            ddh.email = collection["email"];
            
             db.Orders.InsertOnSubmit(ddh);
             db.SubmitChanges();

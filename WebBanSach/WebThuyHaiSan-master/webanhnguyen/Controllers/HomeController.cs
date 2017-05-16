@@ -244,14 +244,10 @@ namespace webanhnguyen.Controllers
             int pageSize = 20;
             int pageNum = (page ?? 1);
             var laysp = from g in db.tbl_Products
-                        where g.CaTuoiMoiNgay == true && g.Status == true
+                        where g.SachMoiMoiNgay == true && g.Status == true
                         orderby g.NgayCapNhat descending
                         select g;
-
-            tbl_menu tenmenu = db.tbl_menus.SingleOrDefault(n => n.id == 5);
-            Session["TenMenu"] = tenmenu.TenMenu;
             ViewBag.TenSapXep = "Sắp xếp: A đến Z";
-
             ViewBag.NameSortParm = "Name_desc";
             ViewBag.NameSortParmasc = "Name_asc";
             ViewBag.DateSortParm = "Date_desc";
@@ -295,10 +291,10 @@ namespace webanhnguyen.Controllers
             int pageNum = (page ?? 1);
 
             var laysp = from g in db.tbl_Products
-                        where g.CaTuoiMoiNgay == true && g.Status == true
+                        where g.SachMoiMoiNgay == true && g.Status == true
                         orderby g.NgayCapNhat descending
                         select g;
-            ViewBag.tenmenu = (from s in db.tbl_menus where s.id == 5 select s);
+          
             ViewBag.TenSapXep = "Sắp xếp: A đến Z";
 
             ViewBag.NameSortParm = "Name_desc";
@@ -343,10 +339,9 @@ namespace webanhnguyen.Controllers
             int pageNum = (page ?? 1);
 
             var laysp = from g in db.tbl_Products
-                        where g.CaTuoiMoiNgay == true && g.Status == true
+                        where g.SachMoiMoiNgay == true && g.Status == true
                         orderby g.NgayCapNhat descending
                         select g;
-            ViewBag.tenmenu = (from s in db.tbl_menus where s.id == 5 select s);
             ViewBag.TenSapXep = "Sắp xếp: A đến Z";
 
             ViewBag.NameSortParm = "Name_desc";

@@ -60,7 +60,7 @@ namespace webanhnguyen.Controllers.Admin
         {
             if (!String.IsNullOrEmpty(keyword))
             {
-                var result = data.Orders.Where(a => a.gmail.Contains(keyword)).OrderByDescending(a => a.thoidiemdathang);
+                var result = data.Orders.Where(a => a.email.Contains(keyword)).OrderByDescending(a => a.thoidiemdathang);
                 if (count != -1)
                     result.Take(count);
                 return result.ToList();
@@ -99,7 +99,7 @@ namespace webanhnguyen.Controllers.Admin
             ViewBag.name = tic.tennguoinhan;
             ViewBag.phone = tic.phonenumber;
             ViewBag.address = tic.diachi;
-            ViewBag.email = tic.gmail;
+            ViewBag.email = tic.email;
             ViewBag.TotalPrice = totalPrice;
             return View(URLHelper.URL_ADMIN_ORDER_DETAIL, listShoppingCardModels);
         }
@@ -129,7 +129,7 @@ namespace webanhnguyen.Controllers.Admin
                 tic.tennguoinhan = name;
                 tic.phonenumber = phone;
                 tic.diachi = address;
-                tic.gmail = email;
+                tic.email = email;
                 if (err == false)
                 {
                     UpdateModel(tic);
@@ -142,7 +142,7 @@ namespace webanhnguyen.Controllers.Admin
                     ViewBag.name = tic.tennguoinhan;
                     ViewBag.phone = tic.phonenumber;
                     ViewBag.address = tic.diachi;
-                    ViewBag.email = tic.gmail;
+                    ViewBag.email = tic.email;
                     var listOrderDetail = getListOrderDetailById(Int32.Parse(id));
                     List<DataHelper.ShoppingCardItemModel> listShoppingCardModels = DataHelper.ShoppingCardHelper.getInstance().getListShoppingCardItemModelFromListOrderDetails(data, listOrderDetail);
                     long totalPrice = 0;

@@ -9,7 +9,7 @@ namespace webanhnguyen.Controllers
 {
     public class UserController : BaseController
     {
-        databaseDataContext db = new databaseDataContext();
+        //databaseDataContext db = new databaseDataContext();
         // GET: User
 
         public ActionResult Index()
