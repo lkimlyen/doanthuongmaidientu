@@ -57,6 +57,7 @@ namespace webanhnguyen.Controllers
             }
             ViewBag.Tongsoluong = TongSoLuong();
             ViewBag.Tongtien = TongTien();
+            Session["TongTien"] = TongTien();
             return View(lstGiohang);
         }
         //Tong so luong

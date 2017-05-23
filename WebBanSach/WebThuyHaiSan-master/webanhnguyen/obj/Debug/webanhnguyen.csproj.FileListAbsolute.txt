@@ -365,3 +365,5 @@ F:\thuong mai dien tu\project\WebBanSach\WebThuyHaiSan-master\webanhnguyen\bin\M
 F:\thuong mai dien tu\project\WebBanSach\WebThuyHaiSan-master\webanhnguyen\bin\Microsoft.Owin.Security.Google.xml
 F:\thuong mai dien tu\project\WebBanSach\WebThuyHaiSan-master\webanhnguyen\bin\Microsoft.Owin.Security.Twitter.xml
 F:\thuong mai dien tu\project\WebBanSach\WebThuyHaiSan-master\webanhnguyen\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\thuong mai dien tu\project\WebBanSach\WebThuyHaiSan-master\webanhnguyen\bin\PayPal.dll
+F:\thuong mai dien tu\project\WebBanSach\WebThuyHaiSan-master\webanhnguyen\bin\PayPal.xml
