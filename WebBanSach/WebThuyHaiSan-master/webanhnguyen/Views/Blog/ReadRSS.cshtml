@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "ReadRSS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="tygh-content clearfix">
+    <div class="container-fluid  content-grid">
+        <div class="row-fluid ">
+            <div class="span16 breadcrumbs-grid">
+                <div id="breadcrumbs_73">
+
+                    <div class="ty-breadcrumbs clearfix">
+                        <a href="/Home/Index" class="ty-breadcrumbs__a">Trang chủ</a><span class="ty-breadcrumbs__slash">/</span><span class="ty-breadcrumbs__current">Đọc tin tức RSS</span>
+                    </div>
+
+                    <!--breadcrumbs_73-->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 padding-right">
+            <div class="features_items">
+                <!--features_items-->
+                @using (Html.BeginForm("ReadRSS", "Blog", FormMethod.Post, new { id="frm_readrss"}))
+                {
+
+                    <div class="ty-control-group">
+                        <input type="URL" name="url" id="dc_url" placeholder="nhập địa chỉ đọc RSS"
+                               class="ty-login__input" value="@ViewBag.URL" style="min-width:100%" />
+                    </div>
+                    <input type="submit" id="doctin" name="doctin" value="Đọc tin RSS" class="ty-btn__login ty-btn__secondary ty-btn" />
+
+                     
+                        <input type="button" id="thoisu" data-url="http://vnexpress.net/rss/thoi-su.rss" value="Thời sự" class="doctintuc ty-btn__login ty-btn__secondary ty-btn" />
+                        <input type="button" id="thoisu" data-url="http://vnexpress.net/rss/giao-duc.rss" value="Giáo dục" class="doctintuc ty-btn__login ty-btn__secondary ty-btn" />
+                        <input type="button" id="thoisu" data-url="http://vnexpress.net/rss/suc-khoe.rss" value="Sức khoẻ" class="doctintuc ty-btn__login ty-btn__secondary ty-btn" />
+                    <script>
+                        
+                        $(function () {
+                            $(".doctintuc").click(function () {
+                                $("#dc_url").val($(this).attr("data-url"));
+                                $("#frm_readrss").submit();
+                            });
+                        });
+                     </script>
+                }
+                <table class="ty-orders-detail__table ty-table">
+                    <thead>
+                        <tr>
+                            <th class="ty-orders-detail__table-product" style="width: 30%; text-align: center">Title</th>
+                            <th class="ty-orders-detail__table-price" style="width: 17%; text-align: center">Link</th>
+                            <th class="ty-orders-detail__table-quantity" style="width: 40%; text-align: center">Description</th>
+                            <th class="ty-orders-detail__table-subtotal" style="width: 17%; text-align: center">Publish Date</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @if (ViewBag.RSSFeed != null)
+                        {
+                            foreach (var item in ViewBag.RSSFeed)
+                            {
+                                <tr class="ty-valign-top">
+                                    <td>@item.Title</td>
+                                    <td><a href="@item.Link" target="_blank">@item.Link</a></td>
+                                    <td>@Html.Raw(item.Description) ...<a href="@item.Link" target="_blank">Xem thêm</a></td>
+                                    <td>@item.PubDate</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

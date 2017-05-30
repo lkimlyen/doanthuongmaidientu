@@ -62,5 +62,17 @@
         <elementListCompartment Id="840ee023-2071-44e6-9d5e-0e4e3d88a512" absoluteBounds="3.765, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="2613fc35-7fe1-47c0-b1fe-c2abba4b2ea4" absoluteBounds="2.25, 4.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/databaseDataContext/tbl_NewsCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d1ddb65-a584-47df-be8d-d7bd54232439" absoluteBounds="2.265, 4.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d3122e2-fcb1-44ea-a492-accd3e483558" absoluteBounds="1.125, 5.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/databaseDataContext/tbl_Article" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51df2c4f-b02e-467a-a2f4-f7514ea4da03" absoluteBounds="1.1400000000000001, 5.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

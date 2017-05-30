@@ -12,7 +12,21 @@ namespace webanhnguyen
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+                "PostFeed",
+                "Feed/{type}",
+                new { controller = "Blog", action = "PostFeed", type = "blog.rss" }
+            );
+            routes.MapRoute(
+                "chi tiet sach",
+                "{alias}-{id}",
+                new { controller = "Home", action = "Details" }, new {id = @"\d+"}
+            );
+            routes.MapRoute(
+             name: "sach hay",
+             url: "sach-hay/{id}",
+             defaults: new { controller = "Home", action = "ProductType"}
+         );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}/{ignoreThisBit}",

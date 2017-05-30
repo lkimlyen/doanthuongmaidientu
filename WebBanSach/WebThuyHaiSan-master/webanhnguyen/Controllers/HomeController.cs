@@ -47,23 +47,23 @@ namespace webanhnguyen.Controllers
         }
         #endregion
         #region chi tiết sản phẩm
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             tbl_header hea = db.tbl_headers.SingleOrDefault(n => n.id == 1);
             Session["title"] = ViewBag.shoptitle;
 
             Session["icon"] = hea.shortcuticon;
-            var CT_SP = (db.tbl_Products.First(sp => sp.alias.Equals(id)));
+            var CT_SP = (db.tbl_Products.First(sp => sp.ID == id));
             int loai = int.Parse(CT_SP.IDLoaiSP.ToString());
             ViewBag.TenLoai = (from s in db.tbl_Products
                                from l in db.tbl_product_types
-                               where s.alias.Equals(id) && s.IDLoaiSP == l.ID && s.Status == true
+                               where s.ID == id && s.IDLoaiSP == l.ID && s.Status == true
                                select l);
             ViewBag.SP_cungloai = (from s in db.tbl_Products
-                                   where s.alias != id && s.IDLoaiSP == loai && s.Status == true
+                                   where s.ID == id && s.IDLoaiSP == loai && s.Status == true
                                    select s).Skip(0).Take(4).ToList();
             ViewBag.SP_khac = (from s in db.tbl_Products
-                               where s.alias != id && s.IDLoaiSP != loai && s.Status == true
+                               where s.ID == id && s.IDLoaiSP != loai && s.Status == true
                                select s).Skip(0).Take(4).ToList();
             //CT_SP.LuotXem += 1;
             //UpdateModel(CT_SP);

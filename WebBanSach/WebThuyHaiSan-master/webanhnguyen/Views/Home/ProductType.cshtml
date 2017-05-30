@@ -102,7 +102,7 @@
                                 <div class="ty-column4">
                                     <div class="ty-grid-list__item ty-quick-view-button__wrapper">
                                             <div class="ty-grid-list__image">
-                                                <a href="@Url.Action("Details","Home",new { id=it.alias})">
+                                                <a href="@Url.Action("Details","Home",new { id=it.ID})">
                                                     <img class="ty-pict" src="~/@it.UrlHinh" style="height: 286.25px; width: 286.25px" alt="@it.TenSP" title="">
                                                 </a>
                                                 @if (@it.KhuyenMai > 0)
@@ -114,7 +114,7 @@
                                                 }
                                                 <div class="product-hover"><div class="product-shipping-free"><i class="fa fa-truck"></i> Miễn phí</div><a href="@Url.Action("Details","Home",new { id=it.alias})" class="product-view">Mua&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a></div>
                                             </div><div class="ty-grid-list__item-name">
-                                                <h2><a href="@Url.Action("Details","Home",new { id=it.alias})" class="product-title" title="@it.TenSP">@it.TenSP</a></h2>
+                                                <h2><a href="@Url.Action("Details","Home",new { id=it.ID})" class="product-title" title="@it.TenSP">@it.TenSP</a></h2>
                                             </div><div class="ty-grid-list__price ">
                                                 <span class="cm-reload-121000272" id="old_price_update_121000272">
 
